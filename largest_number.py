@@ -1,4 +1,4 @@
-# === 1st. Practice [Introduccion a la computacion]
+# === 1st. Practice [Introduccion a la computacion] === #
 
 def input_numbers(message):
     while True:
