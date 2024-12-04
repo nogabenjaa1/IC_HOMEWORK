@@ -1,51 +1,44 @@
-Proceso MayorDeNNumeros
-    Definir numeros Como Real;
-    Definir opcion, agregarMas Como Caracter;
-    Definir cantidadInicial, i Como Entero;
-    Definir nuevoNumero Como Real; // Declarar aquí las variables adicionales necesarias
-    cantidadInicial <- 3;
+Proceso largestnumber
+    Definir numbers Como Real;
+    Definir option, addmore Como Caracter;
+    Definir iniqty, i Como Entero;
+    Definir newnumber Como Real; 
+    iniqty <- 3;
 	
-    // Ciclo principal del programa
     Repetir
-        // Iniciar el arreglo con 3 números iniciales
-        Escribir "Ingrese los primeros 3 números:";
-        Dimension numeros(cantidadInicial);
-        Para i <- 1 Hasta cantidadInicial Hacer
-            Escribir "Ingrese el número ", i, ":";
-            Leer numeros(i);
+        Escribir "First 3 inputs.";
+        Dimension numbers(iniqty);
+        Para i <- 1 Hasta iniqty Hacer
+            Escribir "Input ", i, ":";
+            Leer numbers(i);
         FinPara
 		
-        // Preguntar si desea agregar más números
-        agregarMas <- "y";
-        Mientras agregarMas = "y"
-            Escribir "¿Desea agregar otro número? (y/n):";
-            Leer agregarMas;
-            Si agregarMas = "y" Entonces
-                Escribir "Ingrese el nuevo número:";
-                Leer nuevoNumero;
+        addmore <- "y";
+        Mientras addmore = "y"
+            Escribir "Â¿Do you wanna add more inputs? (y/n):";
+            Leer addmore;
+            Si addmore = "y" Entonces
+                Escribir "Extra input:";
+                Leer newnumber;
 				
-                // Expandir el arreglo manualmente
-                cantidadInicial <- cantidadInicial + 1;
-                Redimension numeros(cantidadInicial);
-                numeros(cantidadInicial) <- nuevoNumero;
+                iniqty <- iniqty + 1;
+                Redimension numbers(iniqty);
+                numbers(iniqty) <- newnumber;
             FinSi
         FinMientras
 		
-        // Calcular el número mayor
-        Definir mayor Como Real;
-        mayor <- numeros(1);
-        Para i <- 2 Hasta cantidadInicial Hacer
-            Si numeros(i) > mayor Entonces
-                mayor <- numeros(i);
+        Definir largest Como Real;
+        largest <- numbers(1);
+        Para i <- 2 Hasta iniqty Hacer
+            Si numbers(i) > largest Entonces
+                largest <- numbers(i);
             FinSi
         FinPara
 		
-        // Mostrar el resultado
-        Escribir "El número mayor es: ", mayor;
+        Escribir "Largest: ", largest;
 		
-        // Preguntar si desea ejecutar nuevamente
-        Escribir "¿Desea ejecutar el programa nuevamente? (y/n):";
-        Leer opcion;
+        Escribir "Â¿Do you wanna continue? (y/n):";
+        Leer option;
 		
-    Hasta Que opcion <> "y"
+    Hasta Que option <> "y"
 FinProceso
